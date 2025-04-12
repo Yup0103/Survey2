@@ -38,6 +38,10 @@ const Hero = () => {
               <a
                 href="#survey-form"
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-opacity-80"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('survey-form').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Join Now
               </a>
@@ -46,8 +50,12 @@ const Hero = () => {
               <a
                 href="#benefits"
                 className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('benefits').scrollIntoView({ behavior: 'smooth' });
+                }}
               >
-                Learn More
+                Know More
               </a>
             </div>
           </div>

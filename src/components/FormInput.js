@@ -11,6 +11,38 @@ const FormInput = ({
   placeholder = '',
   options = []
 }) => {
+  if (type === 'radio') {
+    return (
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          {label}{required && <span className="text-red-500 ml-1">*</span>}
+        </label>
+        <div className="flex space-x-6">
+          {options.map((option) => (
+            <div key={option.value} className="flex items-center">
+              <input
+                type="radio"
+                id={`${id}_${option.value}`}
+                name={name}
+                value={option.value}
+                checked={value === option.value}
+                onChange={onChange}
+                className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+                required={required}
+              />
+              <label
+                htmlFor={`${id}_${option.value}`}
+                className="ml-2 text-sm font-medium text-gray-700"
+              >
+                {option.label}
+              </label>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (type === 'select') {
     return (
       <div className="mb-4">

@@ -111,7 +111,7 @@ const SurveyForm = () => {
               id="gender"
               name="gender"
               label="Gender"
-              type="select"
+              type="radio"
               value={formData.gender}
               onChange={handleInputChange}
               options={[

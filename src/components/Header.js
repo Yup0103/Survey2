@@ -8,7 +8,13 @@ const Header = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link to="/" className="text-2xl font-bold text-primary">Panel Perks</Link>
+              <Link to="/" className="flex items-center">
+                <img 
+                  src="https://oapindia.com/wp-content/uploads/2024/06/logo-color-1.svg" 
+                  alt="OAP Logo" 
+                  className="h-8 w-auto"
+                />
+              </Link>
             </div>
           </div>
           <div className="flex items-center">

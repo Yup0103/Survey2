@@ -87,10 +87,12 @@ const Home = () => {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="bg-secondary rounded-lg p-6">
               <div className="flex items-center mb-4">
-                <div className="mr-4 text-primary">
-                  <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
+                <div className="mr-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1611432579699-484f7990b127?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                    alt="Priya" 
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="font-semibold">Priya</h4>
@@ -104,10 +106,12 @@ const Home = () => {
             
             <div className="bg-secondary rounded-lg p-6">
               <div className="flex items-center mb-4">
-                <div className="mr-4 text-primary">
-                  <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
+                <div className="mr-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1612214070475-1e73f478188c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                    alt="Rajesh" 
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="font-semibold">Rajesh</h4>
@@ -121,10 +125,12 @@ const Home = () => {
             
             <div className="bg-secondary rounded-lg p-6">
               <div className="flex items-center mb-4">
-                <div className="mr-4 text-primary">
-                  <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
+                <div className="mr-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
+                    alt="Meena" 
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="font-semibold">Meena</h4>
