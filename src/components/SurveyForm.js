@@ -3,7 +3,7 @@ import ProgressBar from './ProgressBar';
 import FormInput from './FormInput';
 
 const SurveyForm = () => {
-  const totalSteps = 3;
+  const totalSteps = 2;
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     name: '',
@@ -11,19 +11,17 @@ const SurveyForm = () => {
     mobile: '',
     age: '',
     gender: '',
-    state: '',
-    city: '',
     education: '',
-    occupation: '',
-    feedback: ''
+    phoneValidation: false
   });
 
-  const indianStates = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
-    "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", 
-    "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", 
-    "West Bengal", "Delhi", "Jammu and Kashmir", "Ladakh"
+  const ageOptions = [
+    { value: "18-24", label: "18-24 years" },
+    { value: "25-34", label: "25-34 years" },
+    { value: "35-44", label: "35-44 years" },
+    { value: "45-54", label: "45-54 years" },
+    { value: "55-64", label: "55-64 years" },
+    { value: "65+", label: "65+ years" }
   ];
 
   const educationOptions = [
@@ -37,11 +35,18 @@ const SurveyForm = () => {
   ];
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prev => ({
+        ...prev,
+        [name]: checked
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const nextStep = () => {
@@ -61,11 +66,11 @@ const SurveyForm = () => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-100">
       <div className="px-4 py-5 sm:p-6">
-        {currentStep < 4 && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />}
+        {currentStep < 3 && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />}
         
         {currentStep === 1 && (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Basic Information</h2>
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-gray-800">Join Our Panel</h2>
             
             <FormInput
               id="name"
@@ -96,33 +101,8 @@ const SurveyForm = () => {
               required
               placeholder="10-digit mobile number"
             />
-
-            <FormInput
-              id="age"
-              name="age"
-              label="Age"
-              type="number"
-              value={formData.age}
-              onChange={handleInputChange}
-              required
-            />
             
-            <FormInput
-              id="gender"
-              name="gender"
-              label="Gender"
-              type="radio"
-              value={formData.gender}
-              onChange={handleInputChange}
-              options={[
-                { value: 'male', label: 'Male' },
-                { value: 'female', label: 'Female' },
-                { value: 'other', label: 'Other' }
-              ]}
-              required
-            />
-            
-            <div className="flex justify-end">
+            <div className="flex justify-center">
               <button
                 type="button"
                 onClick={nextStep}
@@ -135,29 +115,34 @@ const SurveyForm = () => {
         )}
 
         {currentStep === 2 && (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Location & Education</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <h2 className="text-xl font-semibold text-gray-800">Additional Information</h2>
 
             <FormInput
-              id="state"
-              name="state"
-              label="State"
+              id="age"
+              name="age"
+              label="Age Group"
               type="select"
-              value={formData.state}
+              value={formData.age}
               onChange={handleInputChange}
-              options={indianStates.map(state => ({ value: state.toLowerCase().replace(/\s+/g, '_'), label: state }))}
+              options={ageOptions}
               required
             />
 
             <FormInput
-              id="city"
-              name="city"
-              label="City"
-              value={formData.city}
+              id="gender"
+              name="gender"
+              label="Gender"
+              type="radio"
+              value={formData.gender}
               onChange={handleInputChange}
+              options={[
+                { value: 'male', label: 'Male' },
+                { value: 'female', label: 'Female' }
+              ]}
               required
             />
-            
+
             <FormInput
               id="education"
               name="education"
@@ -168,62 +153,23 @@ const SurveyForm = () => {
               options={educationOptions}
               required
             />
-            
-            <FormInput
-              id="occupation"
-              name="occupation"
-              label="Occupation"
-              value={formData.occupation}
-              onChange={handleInputChange}
-              required
-            />
-            
-            <div className="flex justify-between">
-              <button
-                type="button"
-                onClick={prevStep}
-                className="bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-              >
-                Back
-              </button>
-              <button
-                type="button"
-                onClick={nextStep}
-                className="bg-primary text-white py-2 px-4 rounded-md hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        )}
 
-        {currentStep === 3 && (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Survey Preferences</h2>
-            
-            <div className="bg-secondary rounded-lg p-4 mb-6">
-              <h3 className="font-medium text-gray-900 mb-2">Available Survey Categories</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>Consumer Products & Services</li>
-                <li>Technology & Digital Trends</li>
-                <li>Healthcare & Wellness</li>
-                <li>Entertainment & Media</li>
-                <li>Food & Beverages</li>
-              </ul>
+            <div className="mt-4">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="phoneValidation"
+                  checked={formData.phoneValidation}
+                  onChange={handleInputChange}
+                  className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                />
+                <span className="ml-2 text-sm text-gray-600">
+                  I agree to be contacted via phone for validation and empanelment
+                </span>
+              </label>
             </div>
-
-            <FormInput
-              id="feedback"
-              name="feedback"
-              label="What topics interest you the most?"
-              type="textarea"
-              value={formData.feedback}
-              onChange={handleInputChange}
-              placeholder="Tell us which survey topics interest you (e.g., technology, food, healthcare)..."
-              required
-            />
             
-            <div className="flex justify-between">
+            <div className="flex justify-center space-x-4">
               <button
                 type="button"
                 onClick={prevStep}
@@ -241,18 +187,18 @@ const SurveyForm = () => {
           </form>
         )}
 
-        {currentStep === 4 && (
-          <div className="text-center py-8">
+        {currentStep === 3 && (
+          <div className="text-center py-6">
             <svg className="mx-auto h-12 w-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <h2 className="text-2xl font-bold text-gray-800 mt-4">Welcome to Panel Perks!</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mt-4">Welcome to Our Panel!</h2>
             <p className="text-gray-700 mt-2">Your registration has been submitted successfully.</p>
-            <p className="text-gray-600 mt-1">We'll send you survey invitations to your email and mobile number soon.</p>
-            <div className="mt-6 text-sm text-gray-500">
-              <p>Expected earnings: ₹500-2,500 per month</p>
-              <p>Survey frequency: 3-7 invitations per week</p>
-            </div>
+            <p className="text-gray-600 mt-2">
+              As part of our Consumer Panel, you'll have the opportunity to participate in surveys 
+              designed to gather valuable feedback on various campaigns. For every survey you complete, 
+              you will receive a suitable reward as a token of our appreciation.
+            </p>
           </div>
         )}
       </div>

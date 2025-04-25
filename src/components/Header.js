@@ -17,11 +17,6 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="flex items-center">
-            <Link to="/about" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</Link>
-            <a href="/#benefits" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Benefits</a>
-            <Link to="/faq" className="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">FAQ</Link>
-          </div>
         </div>
       </div>
     </header>

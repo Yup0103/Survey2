@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Features from '../components/Features';
 import Footer from '../components/Footer';
 import SurveyForm from '../components/SurveyForm';
 import HowItWorks from '../components/HowItWorks';
+import testimonial1 from '../images/testimonial1.jpg';
+import testimonial2 from '../images/testimonial2.jpg';
+import testimonial3 from '../images/testimonial3.jpg';
 
 const Home = () => {
   return (
@@ -13,7 +15,7 @@ const Home = () => {
       <Hero />
       
       {/* Stats Section */}
-      <div className="bg-white py-12 border-b border-gray-200">
+      <div className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 text-center">
             <div className="flex flex-col items-center">
@@ -59,8 +61,6 @@ const Home = () => {
         </div>
       </div>
       
-      <Features />
-      
       <HowItWorks />
       
       {/* Survey Form Section */}
@@ -89,14 +89,14 @@ const Home = () => {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1611432579699-484f7990b127?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                    alt="Priya" 
+                    src={testimonial1}
+                    alt="Priya Sharma" 
                     className="h-12 w-12 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Priya</h4>
-                  <p className="text-sm text-gray-500">Homemaker, Pune</p>
+                  <h4 className="font-semibold">Priya Sharma</h4>
+                  <p className="text-sm text-gray-500">Fashion Designer, Mumbai</p>
                 </div>
               </div>
               <p className="text-gray-700">
@@ -108,14 +108,14 @@ const Home = () => {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1612214070475-1e73f478188c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                    alt="Rajesh" 
+                    src={testimonial2}
+                    alt="Rahul Menon" 
                     className="h-12 w-12 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Rajesh</h4>
-                  <p className="text-sm text-gray-500">IT Professional, Bangalore</p>
+                  <h4 className="font-semibold">Rahul Menon</h4>
+                  <p className="text-sm text-gray-500">Business Analyst, Bangalore</p>
                 </div>
               </div>
               <p className="text-gray-700">
@@ -127,14 +127,14 @@ const Home = () => {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <img 
-                    src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" 
-                    alt="Meena" 
+                    src={testimonial3}
+                    alt="Anjali Nair" 
                     className="h-12 w-12 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Meena</h4>
-                  <p className="text-sm text-gray-500">Small Business Owner, Ahmedabad</p>
+                  <h4 className="font-semibold">Anjali Nair</h4>
+                  <p className="text-sm text-gray-500">Content Creator, Chennai</p>
                 </div>
               </div>
               <p className="text-gray-700">
