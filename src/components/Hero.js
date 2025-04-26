@@ -24,29 +24,32 @@ const Hero = () => {
         {/* Heading Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
-            Market Research Platform
+            Join Our Survey Panel
           </div>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
-            <span className="block mb-2">Shape Products</span>
-            <span className="block text-primary">Earn Rewards</span>
+            <span className="block mb-2">Join and Get</span>
+            <span className="block text-primary">Rewarded Instantly!</span>
           </h1>
+          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+            Join our exclusive survey panel and earn ₹1000 instantly upon enrollment. Share your valuable opinions and continue earning rewards for every survey you complete!
+          </p>
         </div>
-
-        {/* Form Section */}
-        <div className="max-w-md mx-auto">
-          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm bg-white/80 border border-gray-100/50">
-            <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-white via-primary to-white"></div>
-            <div className="px-8 pt-8 pb-8" ref={formRef}>
-              <SurveyForm ref={surveyFormRef} />
-            </div>
-            <div className="px-6 py-4 bg-orange-50/80 border-t border-orange-100">
+        
+      {/* Form Section */}
+      <div className="max-w-md mx-auto">
+        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm bg-white/80 border border-gray-100/50">
+          <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-white via-primary to-white"></div>
+          <div className="px-8 pt-8 pb-8" ref={formRef}>
+                <SurveyForm ref={surveyFormRef} />
+              </div>
+          <div className="px-6 py-4 bg-orange-50/80 border-t border-orange-100">
               <p className="text-xs text-center text-black">By joining, you agree to our Terms of Service and Privacy Policy</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Hero; 

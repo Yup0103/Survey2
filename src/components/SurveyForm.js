@@ -79,131 +79,131 @@ const SurveyForm = forwardRef((props, ref) => {
           <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
         </div>
       )}
-      
-      {currentStep === 1 && (
+        
+        {currentStep === 1 && (
         <div className="space-y-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8">Join Our Panel</h2>
-          
-          <FormInput
-            ref={nameInputRef}
-            id="name"
-            name="name"
-            label="Full Name"
-            type="text"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-            placeholder="Enter your full name"
-          />
-          
-          <FormInput
-            id="email"
-            name="email"
-            label="Email Address"
-            type="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
+            
+            <FormInput
+              ref={nameInputRef}
+              id="name"
+              name="name"
+              label="Full Name"
+              type="text"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              placeholder="Enter your full name"
+            />
+            
+            <FormInput
+              id="email"
+              name="email"
+              label="Email Address"
+              type="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
             placeholder="Enter your email address"
-          />
+            />
 
-          <FormInput
-            id="mobile"
-            name="mobile"
-            label="Mobile Number"
-            type="tel"
-            value={formData.mobile}
-            onChange={handleInputChange}
-            required
-            placeholder="10-digit mobile number"
-          />
-          
+            <FormInput
+              id="mobile"
+              name="mobile"
+              label="Mobile Number"
+              type="tel"
+              value={formData.mobile}
+              onChange={handleInputChange}
+              required
+              placeholder="10-digit mobile number"
+            />
+            
           <div className="pt-6">
-            <button
-              type="button"
+              <button
+                type="button"
               className={primaryButtonClass}
-              onClick={nextStep}
-            >
-              Next
-            </button>
+                onClick={nextStep}
+              >
+                Next
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {currentStep === 2 && (
+        {currentStep === 2 && (
         <form onSubmit={handleSubmit} className="space-y-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8">Additional Information</h2>
 
-          <FormInput
-            id="age"
-            name="age"
-            label="Age Group"
-            type="select"
-            value={formData.age}
-            onChange={handleInputChange}
-            options={ageOptions}
-            required
-          />
+            <FormInput
+              id="age"
+              name="age"
+              label="Age Group"
+              type="select"
+              value={formData.age}
+              onChange={handleInputChange}
+              options={ageOptions}
+              required
+            />
 
-          <FormInput
-            id="gender"
-            name="gender"
-            label="Gender"
-            type="radio"
-            value={formData.gender}
-            onChange={handleInputChange}
-            options={[
-              { value: 'male', label: 'Male' },
-              { value: 'female', label: 'Female' }
-            ]}
-            required
-          />
+            <FormInput
+              id="gender"
+              name="gender"
+              label="Gender"
+              type="radio"
+              value={formData.gender}
+              onChange={handleInputChange}
+              options={[
+                { value: 'male', label: 'Male' },
+                { value: 'female', label: 'Female' }
+              ]}
+              required
+            />
 
-          <FormInput
-            id="education"
-            name="education"
-            label="Education"
-            type="select"
-            value={formData.education}
-            onChange={handleInputChange}
-            options={educationOptions}
-            required
-          />
+            <FormInput
+              id="education"
+              name="education"
+              label="Education"
+              type="select"
+              value={formData.education}
+              onChange={handleInputChange}
+              options={educationOptions}
+              required
+            />
 
           <div className="mt-8">
             <label className="flex items-start cursor-pointer group">
-              <input
-                type="checkbox"
-                name="phoneValidation"
-                checked={formData.phoneValidation}
-                onChange={handleInputChange}
+                <input
+                  type="checkbox"
+                  name="phoneValidation"
+                  checked={formData.phoneValidation}
+                  onChange={handleInputChange}
                 className="h-6 w-6 mt-0.5 border-2 border-gray-300 rounded text-blue-500 focus:ring-blue-500 checked:bg-blue-500 checked:[background-image:url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9J3doaXRlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00xMi4yMDcgNC43OTNhMSAxIDAgMDEwIDEuNDE0bC01IDVhMSAxIDAgMDEtMS40MTQgMGwtMi0yYTEgMSAwIDAxMS40MTQtMS40MTRMNi41IDkuMDg2bDQuMjkzLTQuMjkzYTEgMSAwIDAxMS40MTQgMHonLz48L3N2Zz4=')]"
-              />
+                />
               <span className="ml-4 text-base sm:text-lg text-gray-600 group-hover:text-gray-800 transition-colors">
-                I agree to be contacted via phone for validation and empanelment
-              </span>
-            </label>
-          </div>
-          
+                  I agree to be contacted via phone for validation and empanelment
+                </span>
+              </label>
+            </div>
+            
           <div className="pt-8 flex flex-col sm:flex-row gap-4 sm:gap-8">
-            <button
-              type="button"
+              <button
+                type="button"
               className={secondaryButtonClass}
-              onClick={prevStep}
-            >
-              Back
-            </button>
-            <button
-              type="submit"
+                onClick={prevStep}
+              >
+                Back
+              </button>
+              <button
+                type="submit"
               className={primaryButtonClass}
-            >
+              >
               Complete Registration
-            </button>
-          </div>
-        </form>
-      )}
+              </button>
+            </div>
+          </form>
+        )}
 
-      {currentStep === 3 && (
+        {currentStep === 3 && (
         <div className="text-center py-8 space-y-8">
           <div className="mx-auto h-20 w-20 flex items-center justify-center rounded-full bg-green-100">
             <svg className="h-12 w-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -219,8 +219,8 @@ const SurveyForm = forwardRef((props, ref) => {
               you will receive a suitable reward as a token of our appreciation.
             </p>
           </div>
-        </div>
-      )}
+          </div>
+        )}
     </div>
   );
 });

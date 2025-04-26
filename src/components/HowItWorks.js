@@ -1,48 +1,26 @@
 import React from 'react';
+import { UserPlusIcon, ClipboardDocumentIcon, CurrencyRupeeIcon } from '@heroicons/react/24/outline';
 
 const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      title: 'Quick Sign Up',
-      description: 'Fill out our simple registration form to create your account and join our survey panel.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-        </svg>
-      )
+      title: "Quick Sign Up",
+      description: "Register in under 2 minutes and get ₹1000 instantly credited to your account. No hidden fees or commitments!",
+      icon: UserPlusIcon,
     },
     {
       id: 2,
-      title: 'Get Empaneled',
-      description: 'Our team will contact you for a quick validation to complete your empanelment.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-        </svg>
-      )
+      title: "Take Surveys",
+      description: "Receive survey invitations tailored to your profile. Complete them at your convenience from your mobile or desktop.",
+      icon: ClipboardDocumentIcon,
     },
     {
       id: 3,
-      title: 'Participate in Surveys',
-      description: 'Receive invitations for surveys relevant to you and share your valuable opinions.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-        </svg>
-      )
+      title: "Earn Rewards",
+      description: "Get paid for every completed survey. Withdraw your earnings instantly through UPI, bank transfer, or redeem for gift cards.",
+      icon: CurrencyRupeeIcon,
     },
-    {
-      id: 4,
-      title: 'Earn Ongoing Rewards',
-      description: 'Get rewarded with attractive gift vouchers for every survey you successfully complete.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-        </svg>
-      )
-    }
   ];
 
   return (

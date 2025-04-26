@@ -102,12 +102,12 @@ const Home = () => {
                 <div className="flex sm:block">
                   <div className="relative">
                     <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                      1
-                    </div>
+                  1
+                </div>
                   </div>
                   <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
-                    <h3 className="text-xl font-bold text-black mb-3">Quick Registration</h3>
-                    <p className="text-black/80 text-sm">Basic information to get started</p>
+                  <h3 className="text-xl font-bold text-black mb-3">Quick Registration</h3>
+                  <p className="text-black/80 text-sm">Basic information to get started</p>
                   </div>
                 </div>
               </div>
@@ -117,12 +117,12 @@ const Home = () => {
                 <div className="flex sm:block">
                   <div className="relative">
                     <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                      2
-                    </div>
+                  2
+                </div>
                   </div>
                   <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
-                    <h3 className="text-xl font-bold text-black mb-3">Profile Verification</h3>
-                    <p className="text-black/80 text-sm">Quick validation process</p>
+                  <h3 className="text-xl font-bold text-black mb-3">Profile Verification</h3>
+                  <p className="text-black/80 text-sm">Quick validation process</p>
                   </div>
                 </div>
               </div>
@@ -132,12 +132,12 @@ const Home = () => {
                 <div className="flex sm:block">
                   <div className="relative">
                     <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                      3
-                    </div>
+                  3
+                </div>
                   </div>
                   <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
-                    <h3 className="text-xl font-bold text-black mb-3">Receive Invitations</h3>
-                    <p className="text-black/80 text-sm">Personalized survey opportunities</p>
+                  <h3 className="text-xl font-bold text-black mb-3">Receive Invitations</h3>
+                  <p className="text-black/80 text-sm">Personalized survey opportunities</p>
                   </div>
                 </div>
               </div>
@@ -147,12 +147,12 @@ const Home = () => {
                 <div className="flex sm:block">
                   <div className="relative">
                     <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                      4
-                    </div>
+                  4
+                </div>
                   </div>
                   <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
-                    <h3 className="text-xl font-bold text-black mb-3">Complete & Earn</h3>
-                    <p className="text-black/80 text-sm">Share opinions, get rewards</p>
+                  <h3 className="text-xl font-bold text-black mb-3">Complete & Earn</h3>
+                  <p className="text-black/80 text-sm">Share opinions, get rewards</p>
                   </div>
                 </div>
               </div>

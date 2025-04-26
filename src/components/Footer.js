@@ -16,18 +16,18 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="flex space-x-6">
-            {socialLinks.map((item) => (
+          {socialLinks.map((item) => (
               <a key={item.name} href={item.href} className="text-gray-400 hover:text-primary transition-colors">
-                <span className="sr-only">{item.name}</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  {item.icon}
-                </svg>
-              </a>
-            ))}
-          </div>
+              <span className="sr-only">{item.name}</span>
+              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                {item.icon}
+              </svg>
+            </a>
+          ))}
+        </div>
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Panel Perks, Inc. All rights reserved.
-          </p>
+          &copy; {new Date().getFullYear()} Panel Perks, Inc. All rights reserved.
+        </p>
         </div>
       </div>
     </footer>
