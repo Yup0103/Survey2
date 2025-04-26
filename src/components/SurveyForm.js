@@ -68,21 +68,21 @@ const SurveyForm = forwardRef((props, ref) => {
     setCurrentStep(currentStep + 1);
   };
 
-  // Common button classes - restored to original sizes
-  const primaryButtonClass = "bg-orange-500 text-white py-3 px-6 rounded-lg hover:bg-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg shadow-orange-500/20";
-  const secondaryButtonClass = "bg-gray-100 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500";
+  // Updated button classes for better mobile touch targets
+  const primaryButtonClass = "w-full sm:w-auto bg-orange-500 text-white py-4 sm:py-3 px-8 rounded-xl hover:bg-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg shadow-orange-500/20 text-lg font-medium";
+  const secondaryButtonClass = "w-full sm:w-auto bg-gray-100 text-gray-700 py-4 sm:py-3 px-8 rounded-xl hover:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 text-lg font-medium";
 
   return (
-    <div className="bg-transparent">
+    <div className="bg-transparent px-4 sm:px-0 max-w-2xl mx-auto">
       {currentStep < 3 && (
-        <div className="mb-8">
+        <div className="mb-8 sm:mb-12">
           <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
         </div>
       )}
       
       {currentStep === 1 && (
-        <div className="space-y-6">
-          <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Join Our Panel</h2>
+        <div className="space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8">Join Our Panel</h2>
           
           <FormInput
             ref={nameInputRef}
@@ -118,7 +118,7 @@ const SurveyForm = forwardRef((props, ref) => {
             placeholder="10-digit mobile number"
           />
           
-          <div className="pt-4 flex justify-end">
+          <div className="pt-6">
             <button
               type="button"
               className={primaryButtonClass}
@@ -131,8 +131,8 @@ const SurveyForm = forwardRef((props, ref) => {
       )}
 
       {currentStep === 2 && (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Additional Information</h2>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8">Additional Information</h2>
 
           <FormInput
             id="age"
@@ -170,22 +170,22 @@ const SurveyForm = forwardRef((props, ref) => {
             required
           />
 
-          <div className="mt-6">
+          <div className="mt-8">
             <label className="flex items-start cursor-pointer group">
               <input
                 type="checkbox"
                 name="phoneValidation"
                 checked={formData.phoneValidation}
                 onChange={handleInputChange}
-                className="h-5 w-5 mt-0.5 text-orange-500 focus:ring-orange-500 focus:ring-1 focus:outline-none border-2 border-gray-300 rounded transition-colors group-hover:border-gray-400 checked:bg-orange-500 checked:border-orange-500"
+                className="h-6 w-6 mt-0.5 border-2 border-gray-300 rounded text-blue-500 focus:ring-blue-500 checked:bg-blue-500 checked:[background-image:url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9J3doaXRlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00xMi4yMDcgNC43OTNhMSAxIDAgMDEwIDEuNDE0bC01IDVhMSAxIDAgMDEtMS40MTQgMGwtMi0yYTEgMSAwIDAxMS40MTQtMS40MTRMNi41IDkuMDg2bDQuMjkzLTQuMjkzYTEgMSAwIDAxMS40MTQgMHonLz48L3N2Zz4=')]"
               />
-              <span className="ml-3 text-base text-gray-600 group-hover:text-gray-800 transition-colors">
+              <span className="ml-4 text-base sm:text-lg text-gray-600 group-hover:text-gray-800 transition-colors">
                 I agree to be contacted via phone for validation and empanelment
               </span>
             </label>
           </div>
           
-          <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-between">
+          <div className="pt-8 flex flex-col sm:flex-row gap-4 sm:gap-8">
             <button
               type="button"
               className={secondaryButtonClass}
@@ -197,23 +197,23 @@ const SurveyForm = forwardRef((props, ref) => {
               type="submit"
               className={primaryButtonClass}
             >
-              Submit
+              Complete Registration
             </button>
           </div>
         </form>
       )}
 
       {currentStep === 3 && (
-        <div className="text-center py-6 space-y-6">
-          <div className="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-green-100">
-            <svg className="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div className="text-center py-8 space-y-8">
+          <div className="mx-auto h-20 w-20 flex items-center justify-center rounded-full bg-green-100">
+            <svg className="h-12 w-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-800">Welcome to Our Panel!</h2>
-          <p className="text-gray-600">Your registration has been submitted successfully.</p>
-          <div className="bg-orange-50/30 p-6 rounded-xl">
-            <p className="text-gray-700 leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Welcome to Our Panel!</h2>
+          <p className="text-lg sm:text-xl text-gray-600">Your registration has been submitted successfully.</p>
+          <div className="bg-orange-50/30 p-6 sm:p-8 rounded-2xl">
+            <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
               As part of our Consumer Panel, you'll have the opportunity to participate in surveys 
               designed to gather valuable feedback on various campaigns. For every survey you complete, 
               you will receive a suitable reward as a token of our appreciation.

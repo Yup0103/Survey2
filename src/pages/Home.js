@@ -90,53 +90,70 @@ const Home = () => {
             <p className="text-xl text-black/80">A seamless process designed for your convenience</p>
           </div>
 
-          {/* Horizontal Timeline */}
+          {/* Timeline - Vertical on mobile, Horizontal on desktop */}
           <div className="relative">
-            {/* Progress line */}
-            <div className="absolute top-8 left-0 right-0 h-1 bg-orange-100"></div>
+            {/* Progress line - Vertical on mobile, Horizontal on desktop */}
+            <div className="hidden sm:block absolute top-8 left-0 right-0 h-1 bg-orange-100"></div>
+            <div className="sm:hidden absolute left-8 top-0 bottom-0 w-1 bg-orange-100"></div>
             
-            <div className="grid grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-12 sm:gap-8">
               {/* Step 1 */}
               <div className="relative group">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  1
-                </div>
-                <div className="pt-20 text-center">
-                  <h3 className="text-xl font-bold text-black mb-3">Quick Registration</h3>
-                  <p className="text-black/80 text-sm">Basic information to get started</p>
+                <div className="flex sm:block">
+                  <div className="relative">
+                    <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                      1
+                    </div>
+                  </div>
+                  <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
+                    <h3 className="text-xl font-bold text-black mb-3">Quick Registration</h3>
+                    <p className="text-black/80 text-sm">Basic information to get started</p>
+                  </div>
                 </div>
               </div>
 
               {/* Step 2 */}
               <div className="relative group">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  2
-                </div>
-                <div className="pt-20 text-center">
-                  <h3 className="text-xl font-bold text-black mb-3">Profile Verification</h3>
-                  <p className="text-black/80 text-sm">Quick validation process</p>
+                <div className="flex sm:block">
+                  <div className="relative">
+                    <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                      2
+                    </div>
+                  </div>
+                  <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
+                    <h3 className="text-xl font-bold text-black mb-3">Profile Verification</h3>
+                    <p className="text-black/80 text-sm">Quick validation process</p>
+                  </div>
                 </div>
               </div>
 
               {/* Step 3 */}
               <div className="relative group">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  3
-                </div>
-                <div className="pt-20 text-center">
-                  <h3 className="text-xl font-bold text-black mb-3">Receive Invitations</h3>
-                  <p className="text-black/80 text-sm">Personalized survey opportunities</p>
+                <div className="flex sm:block">
+                  <div className="relative">
+                    <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                      3
+                    </div>
+                  </div>
+                  <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
+                    <h3 className="text-xl font-bold text-black mb-3">Receive Invitations</h3>
+                    <p className="text-black/80 text-sm">Personalized survey opportunities</p>
+                  </div>
                 </div>
               </div>
 
               {/* Step 4 */}
               <div className="relative group">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
-                  4
-                </div>
-                <div className="pt-20 text-center">
-                  <h3 className="text-xl font-bold text-black mb-3">Complete & Earn</h3>
-                  <p className="text-black/80 text-sm">Share opinions, get rewards</p>
+                <div className="flex sm:block">
+                  <div className="relative">
+                    <div className="sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                      4
+                    </div>
+                  </div>
+                  <div className="ml-8 sm:ml-0 sm:pt-20 sm:text-center">
+                    <h3 className="text-xl font-bold text-black mb-3">Complete & Earn</h3>
+                    <p className="text-black/80 text-sm">Share opinions, get rewards</p>
+                  </div>
                 </div>
               </div>
             </div>
