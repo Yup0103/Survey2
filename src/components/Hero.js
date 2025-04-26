@@ -24,14 +24,13 @@ const Hero = () => {
         {/* Heading Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
-            Join Our Survey Panel
+            ₹1000 Instant Bonus
           </div>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
-            <span className="block mb-2">Join and Get</span>
-            <span className="block text-primary">Rewarded Instantly!</span>
+            <span className="block mb-2">Get Instant <span className="text-primary">₹1000 Reward!</span></span>
           </h1>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Join our exclusive survey panel and earn ₹1000 instantly upon enrollment. Share your valuable opinions and continue earning rewards for every survey you complete!
+            Participate in surveys at your own pace, from any device, and enjoy immediate rewards.
           </p>
         </div>
         

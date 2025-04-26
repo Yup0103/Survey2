@@ -25,8 +25,7 @@ const SurveyForm = forwardRef((props, ref) => {
   const ageOptions = [
     { value: "25-35", label: "25-35" },
     { value: "36-45", label: "36-45" },
-    { value: "46-55", label: "46-55" },
-    { value: "55+", label: "55+" }
+    { value: "46+", label: "46+" }
   ];
 
   const educationOptions = [
@@ -185,7 +184,7 @@ const SurveyForm = forwardRef((props, ref) => {
               </label>
             </div>
             
-          <div className="pt-8 flex flex-col sm:flex-row gap-4 sm:gap-8">
+          <div className="pt-8 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-between">
               <button
                 type="button"
               className={secondaryButtonClass}
@@ -195,9 +194,9 @@ const SurveyForm = forwardRef((props, ref) => {
               </button>
               <button
                 type="submit"
-              className={primaryButtonClass}
+                className={primaryButtonClass}
               >
-              Complete Registration
+                Submit
               </button>
             </div>
           </form>
