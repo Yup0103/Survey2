@@ -2,7 +2,7 @@
   "name": "survey-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yup0103.github.io/MarketSurvey",
+  "homepage": "https://yup0103.github.io/Survey2",
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@testing-library/dom": "^10.4.0",
