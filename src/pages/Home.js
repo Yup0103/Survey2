@@ -2,149 +2,188 @@ import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
-import SurveyForm from '../components/SurveyForm';
-import HowItWorks from '../components/HowItWorks';
 import testimonial1 from '../images/testimonial1.jpg';
 import testimonial2 from '../images/testimonial2.jpg';
 import testimonial3 from '../images/testimonial3.jpg';
 
+// Premium design components
+const FeatureCard = ({ icon, title, description, isHighlighted = false }) => (
+  <div className={`group relative bg-white rounded-2xl transition-all duration-300 ${isHighlighted ? 'shadow-xl ring-1 ring-primary/10' : 'shadow-md hover:shadow-xl'}`}>
+    <div className="p-8">
+      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${isHighlighted ? 'bg-primary text-white' : 'bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white'} transition-colors duration-300`}>
+        {icon}
+      </div>
+      <h3 className="mt-6 text-xl font-semibold text-gray-900">{title}</h3>
+      <p className="mt-4 text-primary/70">{description}</p>
+    </div>
+  </div>
+);
+
+const ProcessStep = ({ number, title, description, isLast = false }) => (
+  <div className="group relative">
+    <div className="flex">
+      <div className="flex-shrink-0">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md text-primary font-medium border border-orange-100 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          {number}
+        </div>
+        {!isLast && (
+          <div className="absolute top-12 left-6 w-px h-16 bg-orange-100"></div>
+        )}
+      </div>
+      <div className="ml-6">
+        <h3 className="text-xl font-semibold text-black">{title}</h3>
+        <p className="mt-2 text-black">{description}</p>
+      </div>
+    </div>
+  </div>
+);
+
+const TestimonialCard = ({ image, name, role, quote }) => (
+  <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="p-8">
+      <div className="flex items-center">
+        <img className="h-12 w-12 rounded-full" src={image} alt={name} />
+        <div className="ml-4">
+          <h4 className="text-lg font-semibold text-gray-900">{name}</h4>
+          <p className="text-sm text-gray-500">{role}</p>
+        </div>
+      </div>
+      <p className="mt-4 text-gray-600">{quote}</p>
+    </div>
+  </div>
+);
+
+const StatCard = ({ value, label, icon }) => (
+  <div className="bg-white rounded-2xl shadow-md p-6 border border-orange-50">
+    <div className="flex items-center">
+      <div className="rounded-xl bg-primary/5 p-3 text-primary">
+        {icon}
+      </div>
+      <div className="ml-4">
+        <p className="text-2xl font-bold text-black">{value}</p>
+        <p className="text-sm text-black">{label}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header />
       <Hero />
-      
-      {/* Stats Section */}
-      <div className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 text-center">
-            <div className="flex flex-col items-center">
-              <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                </svg>
-              </div>
-              <dt className="text-4xl font-bold text-gray-900">5 Lakh+</dt>
-              <dd className="mt-2 text-lg font-medium text-gray-600">Active Panel Members</dd>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <dt className="text-4xl font-bold text-gray-900">₹15 Cr+</dt>
-              <dd className="mt-2 text-lg font-medium text-gray-600">Gift Cards Awarded</dd>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-                </svg>
-              </div>
-              <dt className="text-4xl font-bold text-gray-900">97%</dt>
-              <dd className="mt-2 text-lg font-medium text-gray-600">Member Satisfaction</dd>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                </svg>
-              </div>
-              <dt className="text-4xl font-bold text-gray-900">1,000+</dt>
-              <dd className="mt-2 text-lg font-medium text-gray-600">Daily Surveys Completed</dd>
-            </div>
-          </dl>
+
+      {/* Process Section */}
+      <div className="relative py-24 bg-white overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-orange-50/50 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-orange-50/50 to-transparent"></div>
         </div>
-      </div>
-      
-      <HowItWorks />
-      
-      {/* Survey Form Section */}
-      <div className="bg-secondary py-16" id="survey-form">
-        <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-gray-900">Join India's Largest Survey Panel</h2>
-            <p className="mt-4 text-lg text-gray-700">
-              Start earning gift card rewards while shaping the future of products and services in India.
-            </p>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
+              Your Journey
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">From Signup to Rewards</h2>
+            <p className="text-xl text-black/80">A seamless process designed for your convenience</p>
           </div>
-          
-          <SurveyForm />
-        </div>
-      </div>
-      
-      {/* Testimonials */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center">
-            Voices from Our Community
-          </h2>
-          
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            <div className="bg-secondary rounded-lg p-6">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <img 
-                    src={testimonial1}
-                    alt="Priya Sharma" 
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Priya Sharma</h4>
-                  <p className="text-sm text-gray-500">Fashion Designer, Mumbai</p>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                "The rewards are great, but what I really love is how my opinions are valued. I feel like I'm making a difference with every survey I complete."
-              </p>
-            </div>
+
+          {/* Horizontal Timeline */}
+          <div className="relative">
+            {/* Progress line */}
+            <div className="absolute top-8 left-0 right-0 h-1 bg-orange-100"></div>
             
-            <div className="bg-secondary rounded-lg p-6">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <img 
-                    src={testimonial2}
-                    alt="Rahul Menon" 
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
+            <div className="grid grid-cols-4 gap-8">
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                  1
                 </div>
-                <div>
-                  <h4 className="font-semibold">Rahul Menon</h4>
-                  <p className="text-sm text-gray-500">Business Analyst, Bangalore</p>
+                <div className="pt-20 text-center">
+                  <h3 className="text-xl font-bold text-black mb-3">Quick Registration</h3>
+                  <p className="text-black/80 text-sm">Basic information to get started</p>
                 </div>
               </div>
-              <p className="text-gray-700">
-                "Joining this panel was one of the best decisions I've made. The surveys are engaging and the rewards are consistently delivered on time."
-              </p>
-            </div>
-            
-            <div className="bg-secondary rounded-lg p-6">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <img 
-                    src={testimonial3}
-                    alt="Anjali Nair" 
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
+
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                  2
                 </div>
-                <div>
-                  <h4 className="font-semibold">Anjali Nair</h4>
-                  <p className="text-sm text-gray-500">Content Creator, Chennai</p>
+                <div className="pt-20 text-center">
+                  <h3 className="text-xl font-bold text-black mb-3">Profile Verification</h3>
+                  <p className="text-black/80 text-sm">Quick validation process</p>
                 </div>
               </div>
-              <p className="text-gray-700">
-                "Being part of this community has been incredibly rewarding. My feedback has helped shape products that I now see in the market, which is truly satisfying."
-              </p>
+
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                  3
+                </div>
+                <div className="pt-20 text-center">
+                  <h3 className="text-xl font-bold text-black mb-3">Receive Invitations</h3>
+                  <p className="text-black/80 text-sm">Personalized survey opportunities</p>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative group">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center text-2xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">
+                  4
+                </div>
+                <div className="pt-20 text-center">
+                  <h3 className="text-xl font-bold text-black mb-3">Complete & Earn</h3>
+                  <p className="text-black/80 text-sm">Share opinions, get rewards</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
+
+      {/* Testimonials Section */}
+      <div className="relative py-24 bg-white overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-orange-50/50 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-orange-50/50 to-transparent"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
+              Testimonials
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-black">What Our Members Say</h2>
+            <p className="mt-4 text-lg text-black">Don't just take our word for it. Hear directly from our community members.</p>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-3">
+            <TestimonialCard
+              image={testimonial1}
+              name="Priya Sharma" 
+              role="Fashion Designer, Mumbai"
+              quote="The rewards are great, but what I really love is how my opinions are valued. I feel like I'm making a difference with each survey I complete."
+            />
+            <TestimonialCard
+              image={testimonial2}
+              name="Rahul Patel" 
+              role="Software Engineer, Bangalore"
+              quote="I've earned over ₹5,000 in gift cards in just 3 months. The surveys are quick and the rewards are instant. Highly recommended!"
+            />
+            <TestimonialCard
+              image={testimonial3}
+              name="Ananya Gupta" 
+              role="Marketing Professional, Delhi"
+              quote="The platform is so user-friendly and the surveys are actually interesting. It's refreshing to see companies that value customer feedback."
+            />
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

@@ -1,38 +1,48 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import SurveyForm from './SurveyForm';
 
 const Hero = () => {
+  const formRef = useRef(null);
+  const surveyFormRef = useRef(null);
+
   return (
-    <div className="bg-secondary">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex flex-col lg:flex-row items-center">
-        <div className="lg:w-1/2 lg:pr-12">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            <span className="block">Join Our Survey Panel</span>
-            <span className="block text-primary mt-1">Get Rewarded Instantly!</span>
-          </h2>
-          <div className="mt-6 text-gray-600">
-            <p className="flex items-center">
-              <svg className="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Shape the future of products
-            </p>
-            <p className="flex items-center mt-2">
-              <svg className="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Earn Rewards for Every Survey
-            </p>
-            <p className="flex items-center mt-2">
-              <svg className="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Make Your Voice Count
-            </p>
+    <div id="hero-section" className="relative overflow-hidden py-16 bg-white">
+      {/* Stylish background elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-50 via-white to-orange-50/30"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Decorative shapes */}
+      <div className="absolute top-20 left-10 w-16 h-16 border-4 border-primary/20 rounded-full"></div>
+      <div className="absolute bottom-20 right-10 w-24 h-24 border-4 border-primary/10 rounded-full"></div>
+      <div className="absolute top-40 right-40 w-6 h-6 bg-primary/40 rounded-full"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading Section */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
+            Market Research Platform
           </div>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
+            <span className="block mb-2">Shape Products</span>
+            <span className="block text-primary">Earn Rewards</span>
+          </h1>
         </div>
-        <div className="lg:w-1/2 mt-10 lg:mt-0">
-          <SurveyForm />
+
+        {/* Form Section */}
+        <div className="max-w-md mx-auto">
+          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm bg-white/80 border border-gray-100/50">
+            <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-white via-primary to-white"></div>
+            <div className="px-8 pt-8 pb-8" ref={formRef}>
+              <SurveyForm ref={surveyFormRef} />
+            </div>
+            <div className="px-6 py-4 bg-orange-50/80 border-t border-orange-100">
+              <p className="text-xs text-center text-black">By joining, you agree to our Terms of Service and Privacy Policy</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
