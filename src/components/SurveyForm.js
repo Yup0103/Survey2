@@ -68,7 +68,7 @@ const SurveyForm = forwardRef((props, ref) => {
   };
 
   // Updated button classes for better mobile touch targets
-  const primaryButtonClass = "w-full sm:w-auto bg-orange-500 text-white py-4 sm:py-3 px-8 rounded-xl hover:bg-orange-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg shadow-orange-500/20 text-lg font-medium";
+  const primaryButtonClass = "w-full sm:w-auto bg-indigo-500 text-white py-4 sm:py-3 px-8 rounded-xl hover:bg-indigo-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg shadow-indigo-500/20 text-lg font-medium";
   const secondaryButtonClass = "w-full sm:w-auto bg-gray-100 text-gray-700 py-4 sm:py-3 px-8 rounded-xl hover:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 text-lg font-medium";
 
   return (
@@ -211,7 +211,7 @@ const SurveyForm = forwardRef((props, ref) => {
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Welcome to Our Panel!</h2>
           <p className="text-lg sm:text-xl text-gray-600">Your registration has been submitted successfully.</p>
-          <div className="bg-orange-50/30 p-6 sm:p-8 rounded-2xl">
+          <div className="bg-indigo-50/30 p-6 sm:p-8 rounded-2xl">
             <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
               As part of our Consumer Panel, you'll have the opportunity to participate in surveys 
               designed to gather valuable feedback on various campaigns. For every survey you complete, 

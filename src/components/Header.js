@@ -6,7 +6,7 @@ const Header = () => {
     <header className="relative">
       {/* Improved background gradient for seamless blend */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-100 via-orange-50 to-orange-50/30"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-100 via-indigo-50 to-indigo-50/30"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

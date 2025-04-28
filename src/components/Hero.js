@@ -9,7 +9,7 @@ const Hero = () => {
     <div id="hero-section" className="relative overflow-hidden py-16 bg-white">
       {/* Stylish background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-50 via-white to-orange-50/30"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-50 via-white to-indigo-50/30"></div>
         <div className="hidden sm:block absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="hidden sm:block absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
       </div>
@@ -41,7 +41,7 @@ const Hero = () => {
           <div className="px-8 pt-8 pb-8" ref={formRef}>
                 <SurveyForm ref={surveyFormRef} />
               </div>
-          <div className="px-6 py-4 bg-orange-50/80 border-t border-orange-100">
+          <div className="px-6 py-4 bg-indigo-50/80 border-t border-indigo-100">
               <p className="text-xs text-center text-black">By joining, you agree to our Terms of Service and Privacy Policy</p>
           </div>
         </div>

@@ -23,11 +23,11 @@ const ProcessStep = ({ number, title, description, isLast = false }) => (
   <div className="group relative">
     <div className="flex">
       <div className="flex-shrink-0">
-        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md text-primary font-medium border border-orange-100 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-md text-primary font-medium border border-indigo-100 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
           {number}
         </div>
         {!isLast && (
-          <div className="absolute top-12 left-6 w-px h-16 bg-orange-100"></div>
+          <div className="absolute top-12 left-6 w-px h-16 bg-indigo-100"></div>
         )}
       </div>
       <div className="ml-6">
@@ -54,7 +54,7 @@ const TestimonialCard = ({ image, name, role, quote }) => (
 );
 
 const StatCard = ({ value, label, icon }) => (
-  <div className="bg-white rounded-2xl shadow-md p-6 border border-orange-50">
+  <div className="bg-white rounded-2xl shadow-md p-6 border border-indigo-50">
     <div className="flex items-center">
       <div className="rounded-xl bg-primary/5 p-3 text-primary">
         {icon}
@@ -77,8 +77,8 @@ const Home = () => {
       <div className="relative py-24 bg-white overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-orange-50/50 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-orange-50/50 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-indigo-50/50 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-indigo-50/50 to-transparent"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,8 +93,8 @@ const Home = () => {
           {/* Timeline - Vertical on mobile, Horizontal on desktop */}
           <div className="relative">
             {/* Progress line - Vertical on mobile, Horizontal on desktop */}
-            <div className="hidden sm:block absolute top-8 left-0 right-0 h-1 bg-orange-100"></div>
-            <div className="sm:hidden absolute left-8 top-0 bottom-0 w-1 bg-orange-100"></div>
+            <div className="hidden sm:block absolute top-8 left-0 right-0 h-1 bg-indigo-100"></div>
+            <div className="sm:hidden absolute left-8 top-0 bottom-0 w-1 bg-indigo-100"></div>
             
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-12 sm:gap-8">
               {/* Step 1 */}
@@ -165,8 +165,8 @@ const Home = () => {
       <div className="relative py-24 bg-white overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-orange-50/50 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-orange-50/50 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-indigo-50/50 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-indigo-50/50 to-transparent"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

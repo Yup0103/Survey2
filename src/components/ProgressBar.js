@@ -9,7 +9,7 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
         {/* Progress line */}
         <div className="absolute top-4 left-0 right-0 h-1 bg-gray-200 -mx-5">
           <div 
-            className="h-1 bg-orange-500 transition-all duration-500 ease-in-out"
+            className="h-1 bg-indigo-500 transition-all duration-500 ease-in-out"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
@@ -22,14 +22,14 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
           return (
             <div 
               key={stepNumber} 
-              className={`flex flex-col items-center relative z-10 ${isActive ? 'text-orange-500' : 'text-gray-400'}`}
+              className={`flex flex-col items-center relative z-10 ${isActive ? 'text-indigo-500' : 'text-gray-400'}`}
             >
               <div 
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
                   isCompleted 
-                    ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20' 
+                    ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/20' 
                     : isActive 
-                      ? 'border-2 border-orange-500 bg-white' 
+                      ? 'border-2 border-indigo-500 bg-white' 
                       : 'border-2 border-gray-200 bg-white'
                 } transition-all duration-300`}
               >
@@ -38,7 +38,7 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 ) : (
-                  <span className={`text-sm font-medium ${isActive ? 'text-orange-500' : 'text-gray-400'}`}>
+                  <span className={`text-sm font-medium ${isActive ? 'text-indigo-500' : 'text-gray-400'}`}>
                     {stepNumber}
                   </span>
                 )}

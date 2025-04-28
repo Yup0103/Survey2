@@ -13,20 +13,20 @@ const FormInput = forwardRef(({
   className = ''
 }, ref) => {
   // Base classes for focus states and enhanced design
-  const defaultFocusClasses = 'focus:border-orange-500 focus:ring-orange-500 focus:ring-2 focus:outline-none';
+  const defaultFocusClasses = 'focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:outline-none';
   const baseInputClasses = `
     w-full px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-200
-    focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
     transition-all duration-200
-    hover:border-orange-200 hover:bg-orange-50/30
+    hover:border-indigo-200 hover:bg-indigo-50/30
     placeholder:text-gray-400 text-base sm:text-lg
   `;
   
   const selectClasses = `
     w-full px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-200
-    focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
     transition-all duration-200
-    hover:border-orange-200 hover:bg-orange-50/30
+    hover:border-indigo-200 hover:bg-indigo-50/30
     text-base sm:text-lg text-gray-700 appearance-none
   `;
 
@@ -51,7 +51,7 @@ const FormInput = forwardRef(({
                 value={option.value}
                 checked={value === option.value}
                 onChange={onChange}
-                className="h-6 w-6 border-2 border-gray-300 text-orange-500 focus:ring-orange-500 checked:bg-orange-500 checked:[background-image:url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9J3doaXRlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxjaXJjbGUgY3g9JzgnIGN5PSc4JyByPSczJy8+PC9zdmc+Jyl]"
+                className="h-6 w-6 border-2 border-gray-300 text-indigo-500 focus:ring-indigo-500 checked:bg-indigo-500 checked:[background-image:url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9J3doaXRlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxjaXJjbGUgY3g9JzgnIGN5PSc4JyByPSczJy8+PC9zdmc+Jyl]"
                 required={required}
               />
               <label
