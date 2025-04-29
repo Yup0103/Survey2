@@ -6,49 +6,49 @@ const Hero = () => {
   const surveyFormRef = useRef(null);
 
   return (
-    <div id="hero-section" className="relative overflow-hidden py-16 bg-white">
-      {/* Stylish background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-indigo-50 via-white to-indigo-50/30"></div>
-        <div className="hidden sm:block absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="hidden sm:block absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-      </div>
-
-      {/* Decorative shapes */}
-      <div className="hidden sm:block absolute top-20 left-10 w-16 h-16 border-4 border-primary/20 rounded-full"></div>
-      <div className="hidden sm:block absolute bottom-20 right-10 w-24 h-24 border-4 border-primary/10 rounded-full"></div>
-      <div className="hidden sm:block absolute top-40 right-40 w-6 h-6 bg-primary/40 rounded-full"></div>
-
+    <div id="hero-section" className="relative overflow-hidden -mt-20 pt-20 text-white">
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Section */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 text-primary font-medium text-sm mb-6">
-            ₹1000 Instant Bonus
+        <div className="text-center max-w-3xl mx-auto mb-12 pt-16">
+          {/* Updated Badge Style */}
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-medium text-sm mb-6 shadow-lg shadow-pink-500/30">
+            ₹1000 Bonus
           </div>
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
-            <span className="block mb-2">Get Instant <span className="text-primary">₹1000 Reward!</span></span>
+          {/* Updated Heading */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+            <span className="block mb-2">Earn <span className="bg-gradient-to-r from-pink-400 via-cyan-400 to-indigo-400 text-transparent bg-clip-text">₹1000 Now!</span></span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Participate in surveys at your own pace, from any device, and enjoy immediate rewards.
+          {/* Updated Paragraph */}
+          <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+            Quick surveys. Instant rewards. Start earning today.
           </p>
         </div>
         
-      {/* Form Section */}
-      <div className="max-w-md mx-auto">
-        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm bg-white/80 border border-gray-100/50">
-          <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-white via-primary to-white"></div>
-          <div className="px-8 pt-8 pb-8" ref={formRef}>
-                <SurveyForm ref={surveyFormRef} />
-              </div>
-          <div className="px-6 py-4 bg-indigo-50/80 border-t border-indigo-100">
-              <p className="text-xs text-center text-black">By joining, you agree to our Terms of Service and Privacy Policy</p>
+        {/* Form Section */}
+        <div className="max-w-md mx-auto mb-24">
+          {/* Updated Form Container */}
+          <div className="relative bg-gray-800/70 rounded-2xl shadow-2xl shadow-purple-500/20 overflow-hidden backdrop-blur-md border border-gray-700/50">
+            {/* Accent Gradient Line */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-cyan-500 to-indigo-500"></div>
+            <div className="px-8 pt-8 pb-8" ref={formRef}>
+              <SurveyForm ref={surveyFormRef} />
+            </div>
+            {/* Updated Footer */}
+            <div className="px-6 py-4 bg-gray-900/50 border-t border-gray-700/50">
+              <p className="text-xs text-center text-gray-400">By joining, you agree to our Terms of Service and Privacy Policy</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
-export default Hero; 
+export default Hero;
+
+/* Basic animation delay utility classes (add to your global CSS or Tailwind config) */
+/* 
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+*/ 

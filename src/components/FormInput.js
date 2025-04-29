@@ -10,57 +10,42 @@ const FormInput = forwardRef(({
   required = false,
   placeholder = '',
   options = [],
-  className = ''
+  className = '',
+  isDarkMode,
+  labelClassName = "text-white font-medium mb-2",
+  inputClassName = "",
+  optionClassName = "text-white",
+  ...props
 }, ref) => {
-  // Base classes for focus states and enhanced design
-  const defaultFocusClasses = 'focus:border-indigo-500 focus:ring-indigo-500 focus:ring-2 focus:outline-none';
-  const baseInputClasses = `
-    w-full px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-200
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-    transition-all duration-200
-    hover:border-indigo-200 hover:bg-indigo-50/30
-    placeholder:text-gray-400 text-base sm:text-lg
-  `;
   
-  const selectClasses = `
-    w-full px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-200
-    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-    transition-all duration-200
-    hover:border-indigo-200 hover:bg-indigo-50/30
-    text-base sm:text-lg text-gray-700 appearance-none
+  const baseInputClasses = `
+    w-full px-4 py-3 rounded-lg
+    bg-gray-800 text-white
+    border border-gray-600
+    focus:border-pink-500 focus:ring-1 focus:ring-pink-500
+    placeholder-gray-400
   `;
-
-  // Use provided className or default classes
-  const getInputClassName = (defaultClasses) => {
-    return className || `${defaultClasses} ${defaultFocusClasses} ${baseInputClasses}`;
-  };
 
   if (type === 'radio') {
     return (
-      <div className="mb-8">
-        <label className="block text-base sm:text-lg font-medium text-gray-700 mb-4">
+      <div className="form-control w-full">
+        <label className={labelClassName}>
           {label}{required && <span className="text-red-500 ml-1">*</span>}
         </label>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-x-8">
+        <div className="flex flex-row space-x-8 mt-2">
           {options.map((option) => (
-            <div key={option.value} className="flex items-center">
+            <label key={option.value} className="flex items-center space-x-3 cursor-pointer">
               <input
                 type="radio"
-                id={`${id}_${option.value}`}
                 name={name}
                 value={option.value}
                 checked={value === option.value}
                 onChange={onChange}
-                className="h-6 w-6 border-2 border-gray-300 text-indigo-500 focus:ring-indigo-500 checked:bg-indigo-500 checked:[background-image:url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9J3doaXRlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxjaXJjbGUgY3g9JzgnIGN5PSc4JyByPSczJy8+PC9zdmc+Jyl]"
                 required={required}
+                className="w-5 h-5 text-pink-500 border-gray-600 focus:ring-pink-500 focus:ring-offset-gray-800 bg-gray-700"
               />
-              <label
-                htmlFor={`${id}_${option.value}`}
-                className="ml-4 text-base sm:text-lg font-medium text-gray-600 cursor-pointer hover:text-gray-800 transition-colors"
-              >
-                {option.label}
-              </label>
-            </div>
+              <span className="text-gray-200 text-base">{option.label}</span>
+            </label>
           ))}
         </div>
       </div>
@@ -69,28 +54,28 @@ const FormInput = forwardRef(({
 
   if (type === 'select') {
     return (
-      <div className="mb-8">
-        <label htmlFor={id} className="block text-base sm:text-lg font-medium text-gray-700 mb-4">
+      <div className="form-control w-full">
+        <label htmlFor={id} className={labelClassName}>
           {label}{required && <span className="text-red-500 ml-1">*</span>}
         </label>
-        <div className="relative">
-        <select
-          id={id}
-          name={name}
-          value={value}
-          onChange={onChange}
-            className={`${selectClasses}`}
-          required={required}
-        >
-            <option value="" className="text-gray-400">Select an option</option>
-          {options.map((option) => (
-              <option key={option.value} value={option.value} className="text-gray-700">
-              {option.label}
-            </option>
-          ))}
-        </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-            <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <div className="relative mt-2">
+          <select
+            id={id}
+            name={name}
+            value={value}
+            onChange={onChange}
+            className={`${baseInputClasses} appearance-none ${inputClassName}`}
+            required={required}
+          >
+            <option value="" className="bg-gray-800 text-gray-400">Select {label}</option>
+            {options.map((option) => (
+              <option key={option.value} value={option.value} className="bg-gray-800 text-white">
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </div>
@@ -99,42 +84,25 @@ const FormInput = forwardRef(({
     );
   }
 
-  if (type === 'textarea') {
-    return (
-      <div className="mb-8">
-        <label htmlFor={id} className="block text-base sm:text-lg font-medium text-gray-700 mb-4">
-          {label}{required && <span className="text-red-500 ml-1">*</span>}
-        </label>
-        <textarea
+  return (
+    <div className="form-control w-full">
+      <label htmlFor={id} className={labelClassName}>
+        {label}{required && <span className="text-red-500 ml-1">*</span>}
+      </label>
+      <div className="mt-2">
+        <input
+          ref={ref}
+          type={type}
           id={id}
           name={name}
           value={value}
           onChange={onChange}
-          className={getInputClassName('border-gray-300 resize-none hover:border-gray-400')}
           required={required}
           placeholder={placeholder}
-          rows="4"
+          className={`${baseInputClasses} ${inputClassName}`}
+          {...props}
         />
       </div>
-    );
-  }
-
-  return (
-    <div className="mb-8">
-      <label htmlFor={id} className="block text-base sm:text-lg font-medium text-gray-700 mb-4">
-        {label}{required && <span className="text-red-500 ml-1">*</span>}
-      </label>
-      <input
-        ref={ref}
-        type={type}
-        id={id}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-        placeholder={placeholder}
-        className={getInputClassName('border-gray-300 hover:border-gray-400')}
-      />
     </div>
   );
 });

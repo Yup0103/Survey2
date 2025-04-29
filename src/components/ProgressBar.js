@@ -43,7 +43,7 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
                   </span>
                 )}
               </div>
-              <div className={`text-xs mt-2 font-medium ${isActive ? 'text-gray-700' : 'text-gray-400'}`}>
+              <div className={`text-xs mt-2 font-medium ${isActive ? 'text-gray-200' : 'text-gray-400'}`}>
                 {stepNumber === 1 ? 'Basic Info' : stepNumber === 2 ? 'Profile' : `Step ${stepNumber}`}
               </div>
             </div>

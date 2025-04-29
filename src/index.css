@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  @apply bg-[#0B1120] text-gray-200; /* Dark background, light text */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,6 +13,7 @@ body {
 }
 
 code {
+  @apply text-pink-400; /* Accent color for code */
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
@@ -38,4 +40,33 @@ code {
   background-position: 0 0, 10px 0, 10px -10px, 0 10px;
   opacity: 0.1;
   pointer-events: none;
+}
+
+/* Animation delays */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
