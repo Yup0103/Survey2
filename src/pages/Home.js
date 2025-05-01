@@ -97,7 +97,7 @@ const Home = () => {
           <div className="relative py-24 overflow-hidden">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-20">
-                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-medium text-sm mb-6 shadow-lg">
+                <div className="inline-flex items-center px-4 py-1.5 rounded-full border-2 border-pink-500 text-pink-400 font-medium text-sm mb-6 hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300">
                   Your Journey
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">From Signup to Rewards</h2>
@@ -178,7 +178,7 @@ const Home = () => {
           <div className="relative py-24 overflow-hidden">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-medium text-sm mb-6 shadow-lg">
+                <div className="inline-flex items-center px-4 py-1.5 rounded-full border-2 border-pink-500 text-pink-400 font-medium text-sm mb-6 hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300">
                   Testimonials
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white">What Our Members Say</h2>

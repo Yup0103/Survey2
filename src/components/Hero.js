@@ -12,7 +12,7 @@ const Hero = () => {
         {/* Heading Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 pt-16">
           {/* Updated Badge Style */}
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-500 to-cyan-500 text-white font-medium text-sm mb-6 shadow-lg shadow-pink-500/30">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border-2 border-pink-500 text-pink-400 font-medium text-sm mb-6 hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300">
             ₹1000 Bonus
           </div>
           {/* Updated Heading */}
